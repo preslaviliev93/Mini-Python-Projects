@@ -17,6 +17,15 @@ class MatrixGenerator:
 
         return matrix
 
+    def pretty_print(self):
+        # Generate and pretty print the matrix
+        matrix = self.generate()
+        for row in matrix:
+            print(" ".join(f"{num}" for num in row))
 
-matrix_generator = MatrixGenerator(3, 3, 10, 50)
+
+matrix_generator = MatrixGenerator(6, 6, 10, 50)
 print(matrix_generator.generate())
+print("\nPRETTY")
+matrix_generator.pretty_print()
+
