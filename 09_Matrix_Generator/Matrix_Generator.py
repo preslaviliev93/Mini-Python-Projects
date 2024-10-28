@@ -11,6 +11,7 @@ class MatrixGenerator:
         self.start_number = start_number
         self.end_number = end_number
 
+
     def generate(self):
         matrix = [[random.randint(self.start_number, self.end_number) for _ in range(self.matrix_cols)] for _ in
                   range(self.matrix_rows)]
@@ -18,14 +19,19 @@ class MatrixGenerator:
         return matrix
 
     def pretty_print(self):
-        # Generate and pretty print the matrix
+        pretty = ''
         matrix = self.generate()
         for row in matrix:
-            print(" ".join(f"{num}" for num in row))
+            pretty += f" ".join(f"{num}" for num in row) + "\n"
+
+        pretty += f"\nList View:\n{matrix}"
+
+        return pretty
 
 
-matrix_generator = MatrixGenerator(6, 6, 10, 50)
-print(matrix_generator.generate())
-print("\nPRETTY")
-matrix_generator.pretty_print()
+matrix_generator = MatrixGenerator(3, 2, 10, 50)
+# print("\nPRETTY RANDOM MATRIX GENERATOR")
+# matrix_generator.pretty_print()
+print("\nMatrix Generator")
+print(matrix_generator.pretty_print())
 
